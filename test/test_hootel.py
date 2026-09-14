@@ -11,8 +11,20 @@ class TestHootel(object):
         URL = 'http://hotel-v3.progmasters.hu/'
         options = Options()
         options.add_experimental_option("detach", True)
+        # options.add_argument('window-position=0,-1000')
+        options.add_argument('--headless')
+        prefs = {
+            "https_only_mode_enabled": False,
+            "https_first_balanced_mode_enabled": False,
+            "https_first_mode_incognito_enabled": False
+        }
+
+        options.add_experimental_option("prefs", prefs)
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
+        print(self.browser.get_window_size())
+        self.browser.set_window_size(992, 700)
+        print(self.browser.get_window_size())
 
     def teardown_method(self):
         self.browser.quit()
@@ -33,7 +45,7 @@ class TestHootel(object):
 
         submit_btn = self.browser.find_element(By.NAME, 'submit')
         submit_btn.click()
-        time.sleep(1)
+        time.sleep(4)
 
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
