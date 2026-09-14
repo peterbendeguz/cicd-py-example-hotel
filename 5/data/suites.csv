@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"A belépés tesztelése","4585","Hootel Login","test","2026-09-14","passed","2026-09-14","TestHootel","test_hootel","",""
+"egy oldalon megjelenített szálláshelyek száma","1107","Szálláshelyek listázása","test","2026-09-14","passed","2026-09-14","TestHootel","test_hootel","",""
