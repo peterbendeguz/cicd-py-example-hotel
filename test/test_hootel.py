@@ -31,8 +31,8 @@ class TestHootel(object):
 
     @allure.title("Hootel Login")
     @allure.description("A belépés tesztelése")
-    @allure.severity(allure.severity_level.TRIVIAL)
-    @allure.tag("login")
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.tag("login", "Hootel", "happy_path",)
     def test_login(self):
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         login_btn.click()
@@ -51,6 +51,10 @@ class TestHootel(object):
 
         assert logout_btn.text == "Kilépés"
 
+    @allure.title("Szálláshelyek listázása")
+    @allure.description("egy oldalon megjelenített szálláshelyek száma")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag("szálláshelyek", "Hootel", "happy_path", )
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
         hotel_list_btn.click()
